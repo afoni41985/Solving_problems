@@ -2,6 +2,7 @@ package javarush.comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Solution {
     public static ArrayList<JavaRushMentor> mentors = new ArrayList<>();
@@ -17,11 +18,14 @@ public class Solution {
                 new JavaRushMentor("Диего"),
                 new JavaRushMentor("Лага Билаабо")
         );
+        mentors.sort((Comparator.comparingInt(o -> o.getName().length())));
 
-        mentors.sort(new NameComparator());
-
-        for (JavaRushMentor mentor : mentors) {
-            System.out.println(mentor);
-        }
+        System.out.println(mentors);
     }
 }
+
+
+
+
+
+
